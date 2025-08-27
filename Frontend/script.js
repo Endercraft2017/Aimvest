@@ -71,12 +71,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     populateHomepageProjects(projects);
     
     // Initialize auto-scroll after projects are loaded
-    setTimeout(() => {
-      initAutoScroll();
-    }, 1000); // Shorter timeout since we know projects are loaded
+    initAutoScroll();
+    
+    // Hamburger menu functionality
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('.nav');
+    
+    if (hamburgerMenu && nav) {
+      hamburgerMenu.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        hamburgerMenu.classList.toggle('active');
+      });
+    }
   });
-
-const projectCard = document.querySelector('.project-card');
 
 // Auto-scroll functionality
 function initAutoScroll() {

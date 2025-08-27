@@ -335,6 +335,10 @@ a:hover{
     align-items: center
 }
 
+.hamburger-menu {
+    display: none;
+}
+
 .hide{
     opacity: 0;
 }
@@ -573,6 +577,64 @@ h3{
 
 /* Mobile devices (max-width: 768px) */
 @media only screen and (max-width: 768px) {
+    .header-bar {
+        position: relative;
+    }
+    
+    .nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 80px 20px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        transition: right 0.3s ease;
+    }
+    
+    .nav.active {
+        display: flex;
+        right: 0;
+    }
+    
+    .nav a {
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 1.1rem;
+    }
+    
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #0D161C;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+    
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
     .hero-text h1 {
         font-size: 1.8rem;
     }
@@ -585,6 +647,87 @@ h3{
     .service-cards {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         grid-gap: 20px;
+    }
+    
+    /* About page responsive styles */
+    .hero1 {
+        height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero1 h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero1 p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .hero1::after {
+        top: 0;
+        left: 0;
+        background-size: contain;
+        background-position: center;
+        opacity: 0.1;
+    }
+    
+    .about-section {
+        padding: 0 1rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .about-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .about-section p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Contact page responsive styles */
+    .contact-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-card p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-map iframe {
+        height: 300px;
+    }
+    
+    /* Services page responsive styles */
+    .service-category h3 {
+        font-size: 1.1rem;
+    }
+    
+    .service-category p {
+        font-size: 0.9rem;
+    }
+    
+    .service-category li {
+        font-size: 0.9rem;
+    }
+    
+    /* Projects page responsive styles */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
@@ -599,5 +742,82 @@ h3{
     }
     .hero p{
         font-size: 1rem;
+    }
+    
+    /* About page desktop styles */
+    .hero1 {
+        height: 25vh;
+        padding-left: 150px;
+        align-items: flex-start;
+    }
+    
+    .hero1::after {
+        top: -60px;
+        left: -500px;
+        background-size: 80px;
+        background-position: center;
+        opacity: 1;
+    }
+    
+    .hero1 h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero1 p {
+        font-size: 1.1rem;
+    }
+    
+    .about-section {
+        padding: 0;
+    }
+    
+    .about-section h2 {
+        font-size: 2rem;
+    }
+    
+    .about-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .about-section p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Contact page desktop styles */
+    .contact-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .contact-card p {
+        font-size: 1rem;
+    }
+    
+    .contact-map iframe {
+        height: 450px;
+    }
+    
+    /* Services page desktop styles */
+    .service-category h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-category p {
+        font-size: 1rem;
+    }
+    
+    .service-category li {
+        font-size: 1rem;
+    }
+    
+    /* Projects page desktop styles */
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
     }
 }
