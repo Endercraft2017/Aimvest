@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const project = {
                     name: folder.replace(/^\d+/g, '').trim(),
                     path: folder,
-                    image: `../resources/projects/${folder}/1.jpg`,
+                    image: `./resources/projects/${folder}/1.jpg`,
                     description: await fetchDescription(folder)
                 };
                 projects.push(project);
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function fetchDescription(folder) {
         try {
-            const response = await fetch(`../resources/projects/${folder}/Scope.txt`);
+            const response = await fetch(`./resources/projects/${folder}/Scope.txt`);
             return await response.text();
         } catch {
             return 'Project description not available';
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Event listeners
     viewAllBtn.addEventListener('click', () => {
-        window.location.href = 'Frontend/projects.html';
+        window.location.href = './Frontend/projects.html';
     });
 
     // Initialize
