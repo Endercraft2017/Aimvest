@@ -365,18 +365,20 @@ a:hover{
     width: 80vw;
     height: 40vh;
     background-color: #000000;
+    color: #6e7880;
     border-radius: 20px;
 }
 
 .hero1{
     height: 25vh;
-    padding-left: 150px;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: left;
+    gap: 2vw;
     background-color: #ffe3e3;
     box-shadow: 0 1px 2px #0D161C, -1px 0 2px #0D161C;
 }
 
-.hero::after, .hero1::after{
+.hero::after{
     content: "";
     position: absolute;
     top: 0;
@@ -392,31 +394,25 @@ a:hover{
     filter: blur(2px) brightness(0.5);
 }
 
-.hero1::after{
-    top: -60px;
-    left: -500px;
-    background-image: url('../resources/logo_only.png');
-    background-size: 80px;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: blur(0px) brightness(1);
-    z-index: 0;
-}
-
 .hero1 h1{
     font-size: 40px;
     margin-bottom: 0;
 }
 
 .hero-text{
-    color: #ffbcbc;
+    color: #ecc1c1;
     z-index: 1;
+    margin-bottom: 30px;
 }
 
 .hero-text h1{
     font-family: 'Work Sans', 'Noto Sans', sans-serif;
     font-weight: bolder;
     font-size: 5vw;
+}
+
+.other{
+    color:#0D161C
 }
 
 .hero p{
@@ -651,13 +647,15 @@ h3{
     
     /* About page responsive styles */
     .hero1 {
+        width: 90vw;
         height: auto;
         padding: 2rem 1rem;
         text-align: center;
         align-items: center;
         justify-content: center;
+        margin: 0 auto;
     }
-    
+
     .hero1 h1 {
         font-size: 1.5rem;
         line-height: 1.2;
@@ -666,14 +664,6 @@ h3{
     .hero1 p {
         font-size: 0.9rem;
         line-height: 1.4;
-    }
-    
-    .hero1::after {
-        top: 0;
-        left: 0;
-        background-size: contain;
-        background-position: center;
-        opacity: 0.1;
     }
     
     .about-section {
@@ -746,17 +736,8 @@ h3{
     
     /* About page desktop styles */
     .hero1 {
-        height: 25vh;
-        padding-left: 150px;
-        align-items: flex-start;
-    }
-    
-    .hero1::after {
-        top: -60px;
-        left: -500px;
-        background-size: 80px;
-        background-position: center;
-        opacity: 1;
+        width: 80vw;
+        margin: 0 auto;
     }
     
     .hero1 h1 {
