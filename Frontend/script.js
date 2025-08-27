@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Event listeners
     viewAllBtn.addEventListener('click', () => {
-        window.location.href = 'projects.html';
+        window.location.href = 'Frontend/projects.html';
     });
 
     // Initialize
